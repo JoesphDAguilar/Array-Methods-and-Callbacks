@@ -91,7 +91,7 @@ function getWinnersByYear(array, getFinals, getYears, getWinners) {
     return winners.map((country, index) => `In ${years[index]}, ${country} won the world cup!`);
 }
 
-console.log(getWinnersByYear(fifaData,getFinals, getYears, getWinners))
+// console.log(getWinnersByYear(fifaData,getFinals, getYears, getWinners))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher order function getAverageGoals to do the following: 
@@ -103,8 +103,9 @@ Use the higher order function getAverageGoals to do the following:
  Example of invocation: getAverageGoals(getFinals(fifaData));
 */
 
-function getAverageGoals(/* code here */) {
-  /* code here */
+function getAverageGoals(array) {
+    const averageHomeGoals = array.reduce((acc, item) => acc + item['Home Team Goals'] + item['Away Team Goals'], 0)
+    return (averageHomeGoals / array.length).toFixed(2);
 }
 
 /// 🥅 STRETCH 🥅 ///
